@@ -12,8 +12,12 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-bar">
-        <input
+      <div className="Search-bar-header">
+				<div>
+					<img className="Searching-dog-gif" src={'https://media.giphy.com/media/l0FebXMK2OeqApj44/giphy.gif'} />
+					
+				</div>
+				<input className="Search-bar-input"
           value={this.state.term}
           onChange={e => this.onInputChange(e.target.value)}/>
 					

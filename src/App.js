@@ -12,7 +12,11 @@ class App extends Component {
       selectedgiph: null 
     };
   }
+  
 
+  componentWillMount () {
+    this.giphySearch('dog')
+  }
 
   giphySearch = (term) => {
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=pfYmLUYFExpno5nQ5kOSv364ydnMHxrJ&q=${term}&limit=25&offset=0&rating=G&lang=en`)
@@ -29,8 +33,8 @@ class App extends Component {
     const {giphs} = this.state
     let gifs = giphs && giphs.map( (gif, key ) => {
       return (
-        <video height={gif.images.preview.height} autoPlay loop  key={gif.id}>
-          <source src={gif.images.preview.mp4} type="video/mp4" />
+        <video className= "Video" height={gif.images.fixed_height.height} autoPlay loop  key={gif.id}>
+          <source src={gif.images.fixed_height.mp4} type="video/mp4" />
         </video>
       );
     });
@@ -38,10 +42,14 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar callSearch = { this.giphySearch } />
-        {gifs}
+        <div className="Video-list">
+          {gifs}
+        </div>
       </div>
     );
   }
 }
+
+
 
 export default App;
