@@ -18,6 +18,7 @@ class App extends Component {
     this.giphySearch('dog')
   }
 
+  //Using the giphy API fetch gifs and put it into the state
   giphySearch = (term) => {
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=pfYmLUYFExpno5nQ5kOSv364ydnMHxrJ&q=${term}&limit=25&offset=0&rating=G&lang=en`)
     .then(res => res.json())

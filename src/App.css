@@ -1,51 +1,73 @@
-* {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+@font-face {
+  font-family: 'Modak', cursive;
+  font-family: 'Work Sans', sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Modak|Work+Sans");
+}
+
+*:focus {
+  outline: none;
 }
 
 .App {
+  font-family: 'Modak', cursive;
   text-align: center;
   background-color: rgb(37, 183, 219);
+
 }
 
 .Search-bar-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(35, 205, 252);
 }
 
-.Searching-dog-gif {
-  height: 100px;
-  width: 100px;
-}
-.Search-bar-input {
-
-  margin: 50px;
-  width: 70%;
-  height: 30px;
-  font-size: 25px;
-  /* background-color: #111; */
-  border: 5px solid rgb(29, 161, 179);
+.Logo-and-Title {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 
-.Search-bar-header[type=text]:focus{
+.Searching-dog-gif {
+  height: 50px;
+  width: 50px;
+}
+.Search-bar-input {
+  margin: 3px;
+  padding: 5px;
+  width: 70%;
+  height: 30px;
+  font-size: 25px;
+  border: 5px solid #456990;
+  background: rgb(35, 205, 252);
+  font-family: 'Work Sans';
+  color: #F4F6F5;
+  border-radius: 6px;
+  padding-left: 17px;
+}
+
+.Title {
+  font-size: 55px;
+  font-family: 'Modak';
+  color: #456990;
+}
+
+.Search-bar-header[type=text]:focus {
    /* Remove First */
    -webkit-appearance: none;
    -moz-appearance: none;
-   appearance: none;
    box-shadow: none !important;
    background-clip: padding-box;
    outline: none;   
-
 }
 
-.Video{
+.Video {
   margin: 5px;
 }
 
-.Video-list{
+.Video-list {
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
@@ -53,10 +75,8 @@
   flex-wrap: wrap;
 }
 
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+input::placeholder {
+  color: white;
 }
 
 .App-header {
