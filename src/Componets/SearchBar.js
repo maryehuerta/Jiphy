@@ -25,6 +25,7 @@ class SearchBar extends Component {
 		this.setState({term});
 		this.timer = setTimeout(() => {
 			console.log(this.state.term)
+			this.props.callSearch(this.state.term)
 		}, 1500);
     // this.props.onSearchedTermChange(term);
   }
