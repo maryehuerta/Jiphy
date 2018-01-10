@@ -5,6 +5,7 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 		let timer = null
+    //Set the state for SearchBar to an empty string
     this.state = {
       term: ''
     };
@@ -14,9 +15,12 @@ class SearchBar extends Component {
     return (
       <div className="Search-bar-header">
 				<div className="Logo-and-Title">
+          {/* Title for Jiphy */}
           <p className="Title"> Jiphy </p>
+          {/* Logo for Jiphy */}
 					<img className="Searching-dog-gif" src={'https://media.giphy.com/media/l0FebXMK2OeqApj44/giphy.gif'} />
 				</div>
+        {/* Search Bar input */}
 				<input className="Search-bar-input"
           value={this.state.term}
           onChange={e => this.onInputChange(e.target.value)}

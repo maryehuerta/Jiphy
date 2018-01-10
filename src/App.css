@@ -12,7 +12,7 @@
   font-family: 'Modak', cursive;
   text-align: center;
   background-color: rgb(37, 183, 219);
-
+  
 }
 
 .Search-bar-header {
@@ -65,6 +65,7 @@
 
 .Video {
   margin: 5px;
+  border-radius: 5px;
 }
 
 .Video-list {

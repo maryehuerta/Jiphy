@@ -13,8 +13,7 @@ class App extends Component {
     //This is our inital state
     this.state = { 
       giphs: null,
-      selectedgiph: null,
-      loading: true
+      selectedgiph: null
     };
   }
   
@@ -50,9 +49,17 @@ class App extends Component {
   // Pass it as props to SearchBar, and return the JSON from the fetch
   render() {
 
-    
+    // To simplify the code (so we don't have to write this.state) we can destructure 
+    // the giphs array. So Instead of having to writing "this.state.giphs" when we want 
+    // to use the array of giphy we can now use "giphs".
     const {giphs} = this.state
+   
+    // Definition of map function: "the map method creates a new array with the results 
+    // of calling a provided function on every element in the array." 
+    // We call the map function and for each element (gif) in the array we return a 
+    // video of the gif and put it into a new array called gifs
     let gifs = giphs && giphs.map( (gif, key ) => {
+      console.log(gif)
       return (
         <video className= "Video" height={gif.images.fixed_height.height} autoPlay loop  key={gif.id}>
           <source src={gif.images.fixed_height.mp4} type="video/mp4" />
@@ -60,9 +67,12 @@ class App extends Component {
       );
     });
 
+    
     return (
       <div className="App">
+        {/* Passing the function "giphySearch" to the search bar component */}
         <SearchBar callSearch = { this.giphySearch } />
+        {/*  renders all the videos returned from the map function*/}
         <div className="Video-list">
           {gifs}
         </div>
